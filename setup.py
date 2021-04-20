@@ -24,14 +24,17 @@ def get_install_requires():
 
 setup(
     name="django-filemanager",
-    version="0.0.1",
-    author="Information Management Group",
+    version="0.0.3",
+    author="Information Management Group; Talana",
     author_email="img.iitr.img@gmail.com",
     description="A file manager for Django",
     license="MIT",
-    packages=find_packages(exclude=["tests", ]),
+    packages=["filemanager"],
     install_requires=get_install_requires(),
     zip_safe=False,
     include_package_data=True,
+    package_data = {
+      "filemanager":["static/*", "templates/*","*.html", "*.css", "*.js", "*.png"]
+    },
     test_suite='tests.main',
 )
